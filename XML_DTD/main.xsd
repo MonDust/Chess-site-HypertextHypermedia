@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:element name="chess_blog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+
+        <xs:element name="menu">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="title"/>
+                    <xs:element name="topic" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="main_information">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="media"/>
+                    <xs:element ref="welcome"/>
+                    <xs:element ref="text"/>
+                    <xs:element ref="link"/>
+                    <xs:element name="website_links">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element ref="title"/>
+                                <xs:choice>
+                                    <xs:element name="links_withmedia" type="linkMediaType"/>
+                                    <xs:element ref="media"/>
+                                </xs:choice>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="basics">
+            <xs:complexType>
+                <xs:all>
+                    <xs:element ref="title"/>
+                    <xs:element ref="welcome"/>
+                    <xs:element ref="media"/>
+                    <xs:element ref="rules" />
+                </xs:all>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="other_information">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="title"/>
+                    <xs:element ref="text"/>
+                    <xs:element ref="title"/>
+                    <xs:element ref="tournaments" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element ref="author_and_contact"/>
+
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+
+
+<xs:element name="title" type="titleType" />
+
+<xs:complexType name="titleType">
+    <xs:simpleContent>
+        <xs:extension base="shortStringType">
+            <xs:attribute name="type" type="tittleAttr" use="optional"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="tittleAttr">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="sub_title"/>
+        <xs:enumeration value="main_title"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="shortStringType">
+    <xs:restriction base="xs:string">
+        <xs:maxLength value="50"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="media" type="mediaType"/>
+
+<xs:complexType name="mediaType">
+    <xs:sequence>
+        <xs:element name="image" type="imageType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="gallery" type="isGallery" default="no" use="optional"/>
+</xs:complexType>
+
+<xs:simpleType name="isGallery">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="yes|no"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="imageType">
+    <xs:simpleContent>
+        <xs:extension base="xs:string">
+            <xs:attribute ref="source" use="required"/>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="type" use="optional" type="imageChoiceType"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="imageChoiceType">
+    <xs:restriction base="xs:string">
+			<xs:enumeration value="button"/>
+			<xs:enumeration value="big_image"/>
+            <xs:enumeration value="board"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:element name="text" type="textType"/>
+
+<xs:complexType name="textType" mixed="true">
+    <xs:sequence>
+        <xs:element name="ending" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="kind" type="kindType"/>
+</xs:complexType>
+
+<xs:simpleType name="kindType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="explanation" />
+        <xs:enumeration value="history" />
+        <xs:enumeration value="rules" />
+    </xs:restriction>
+</xs:simpleType>
+
+
+<xs:element name="link" type="linkType"/>
+
+<xs:complexType name="linkType">
+    <xs:simpleContent>
+        <xs:extension base="xs:anyURI">
+            <xs:attribute ref="kind" use="optional"/>
+            <xs:attribute ref="source" use="required"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="linkMediaType">
+    <xs:sequence>
+        <xs:element name="link" type="extLink" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="extLink">
+    <xs:sequence>
+        <xs:element name="image" type="imageType"/>
+    </xs:sequence>
+    <xs:attribute ref="kind" use="optional"/>
+    <xs:attribute ref="source" use="required"/>
+</xs:complexType>
+
+
+<xs:simpleType name="idType">
+    <xs:restriction base="xs:nonNegativeInteger">
+        <xs:minInclusive value="1"/>
+        <xs:maxInclusive value="100"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="rules" type="rulesType"/>
+
+<xs:complexType name="rulesType">
+    <xs:sequence>
+        <xs:element name="piece" type="pieceType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pieceType">
+    <xs:sequence>
+        <xs:element name="name" type="pieceName"/>
+        <xs:element name="rule" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idType"/>
+</xs:complexType>
+
+<xs:simpleType name="pieceName">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+
+
+<xs:element name="tournaments" type="tournamentsType"/>
+
+<xs:complexType name="tournamentsType">
+    <xs:sequence>
+        <xs:element name="component" type="componentType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="componentType">
+    <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="description" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idType"/>
+</xs:complexType>
+
+
+<xs:simpleType name="id_numberType">
+    <xs:restriction base="xs:int">
+        <xs:pattern value="[0-9]{6}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="outlookType">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="\w+([\-+.']\w+)*@outlook.com"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="gmailType">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="\w+([\-+.']\w+)*@gmail.com"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="copyrightType">
+    <xs:restriction base="xs:string">
+         <xs:pattern value="Copyright 20[0-9]{2}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="listOfStrings">
+    <xs:list itemType="shortStringType"/>
+</xs:simpleType>
+
+<xs:group name="info_group">
+    <xs:sequence>
+        <xs:element name="copyright" type="copyrightType"/>
+        <xs:element name="names_and_surname">
+            <xs:simpleType>
+                <xs:restriction base="listOfStrings">
+                    <xs:length value="2"/>
+                    <xs:pattern value="[A-Z][a-z]*( [A-Z][a-z]*)*"/>
+                  </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        <xs:element name="id_number" type="id_numberType" />
+    </xs:sequence>
+</xs:group>
+
+<xs:element name="author" type="authorType" />
+<xs:element name="author_and_contact" type="extAuthorType" />
+
+<xs:complexType name="authorType">
+    <xs:group ref="info_group"/>
+</xs:complexType>
+
+<xs:complexType name="extAuthorType">
+    <xs:complexContent>
+        <xs:extension base="authorType">
+            <xs:sequence>
+                <xs:element name="contact">
+                    <xs:complexType>
+                      <xs:sequence>
+                          <xs:element ref="title"/>
+                          <xs:element name="mail">
+                              <xs:simpleType>
+                                  <xs:union memberTypes="outlookType gmailType"/>
+                              </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="phone">
+                              <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+                                  </xs:restriction>
+                              </xs:simpleType>
+                          </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+
+<xs:element name="welcome" type="xs:string"/>
+<xs:attribute name="kind" type="xs:string"/>
+<xs:attribute name="source" type="xs:string"/>
+
+</xs:schema>

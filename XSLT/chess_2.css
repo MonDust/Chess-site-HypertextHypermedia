@@ -1,0 +1,147 @@
+html {
+	background: linear-gradient(0deg, rgba(98,144,71,1) 0%, rgb(148, 22, 121) 150%) rgba(98,144,71,1) no-repeat;
+	min-height: 100%;
+}
+
+footer { 
+	height:50px;
+	background:rgb(54, 50, 36);
+	color:#887a5b;
+	text-align:center;
+	margin-top:10px;
+	margin: 10px 20% 0 calc(150px + 20%);
+	padding:5px;
+	border-radius: 25px;
+}
+
+header { 
+	height:50px;
+    border-radius: 25px;	
+	background: #3e231a; 
+	margin-bottom: 10px;
+	margin-right: 100px; 
+}
+
+a {
+	text-decoration: none;
+}
+.other_link {
+	color: rgb(126, 14, 18);
+}
+.other_link:visited {
+	color: rgb(66, 39, 129);
+}
+
+h1, h2, h3  {
+    font-family:'Times New Roman', Times, serif;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+	color: rgb(54, 50, 36);
+}
+h2 {
+	text-align: center;
+	font-size: 40px;
+}
+h3 {
+	margin-left: 40px;
+    font-size: 20px;
+}
+
+table, th, td {
+    border: 2px solid;
+	border-color: #1a3e21;
+	background-color: rgb(178, 175, 196);
+}
+th {
+	background-color: rgb(185, 138, 152);
+}
+table {
+	margin: 0 20px 0 20px;
+}
+
+form {
+	margin-left: 10%;
+}
+form label {
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.gotop {
+	float:right;
+}
+.text,  .center {
+	margin: 0 5% 0 5%;
+}
+.gallery {
+	margin: 0 20% 0 20%;
+}
+
+.button_link {
+	height:50px;
+	width:auto;
+	margin: 0 -5px;
+	border-radius: 5px;
+}
+.button_link:hover{
+	transform: scale(1.3);
+}
+.one_board {
+	float:right;
+	margin-bottom: 5%;
+	margin-right: 5%;
+}
+.one_board p {
+	color:#1a3a3e;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;	
+}
+
+.two_board {
+	float:left;
+	margin-bottom: 5%;
+	margin-right: 5%;
+}
+.two_board p {
+	color:#1a3e37;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.board {
+	height:300px;
+	width:auto;
+}
+.board:hover{
+	transform: scale(1.5);
+}
+#last_img {
+	width: 80%;
+	height: auto;
+	border-radius: 25px;
+}
+#last_image {
+	margin: 0 5% 0 20%;
+}
+
+#websites {
+	display: flex;
+	flex-direction: row;
+}
+
+#content { 
+	width:90%; 
+	background: #4d08a2;
+	padding:1%; 
+	overflow:hidden; 
+}
+
+#wrapper { 
+	width:83%;
+	margin-left: 150px;
+	margin-top: 0px;
+	min-height:calc(100% - 52px); 
+	padding:1%; 
+}
+
+#triangle {
+	fill:rgb(59, 5, 40);
+	stroke:rgb(5, 190, 247);
+	stroke-width:10;
+	stroke-linejoin:round;
+}

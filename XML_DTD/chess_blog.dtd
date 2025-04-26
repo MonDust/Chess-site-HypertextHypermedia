@@ -1,0 +1,49 @@
+<!ENTITY % img_type "type (button|big_image|board) #IMPLIED">
+<!ENTITY % img_name "name CDATA #REQUIRED">
+<!ENTITY % source "source CDATA #REQUIRED">
+<!ENTITY % kind "kind CDATA #IMPLIED">
+<!ENTITY % id "id CDATA #REQUIRED">
+
+<!ELEMENT chess_blog (title, menu, main_information, basics, other_information, (author_and_contact|author))>
+<!ATTLIST chess_blog
+          xmlns:xsi CDATA #IMPLIED
+          xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+    <!ELEMENT title (#PCDATA) >
+    <!ATTLIST title type CDATA #IMPLIED>
+    <!ELEMENT menu (title, (topic)*) >
+    <!ELEMENT topic (#PCDATA) >
+    <!ELEMENT main_information (media, welcome, text, link, website_links) >
+        <!ELEMENT media (image)* >
+        <!ATTLIST media gallery (yes|no) "no">
+            <!ELEMENT image (#PCDATA) >
+            <!ATTLIST image %img_type;
+                      %img_name; 
+                      %source; >
+        <!ELEMENT welcome (#PCDATA) >
+        <!ELEMENT text (#PCDATA | ending)*>
+        <!ATTLIST text kind ID #IMPLIED>
+            <!ELEMENT ending (#PCDATA)>
+        <!ELEMENT website_links (title, links_withmedia)>
+        <!ELEMENT links_withmedia (link)*>
+            <!ELEMENT link (#PCDATA | image)*>
+            <!ATTLIST link %source; >
+            <!ATTLIST link %kind; >
+    <!ELEMENT basics (title, (welcome| media| rules)*) >
+        <!ELEMENT rules (piece)*>
+        <!ELEMENT piece (name, rule)>
+        <!ATTLIST piece %id;>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT rule (#PCDATA)>
+    <!ELEMENT other_information (((title,text)|(title,tournaments))*) >
+        <!ELEMENT tournaments (component)* >
+            <!ELEMENT component (title,description)>
+            <!ATTLIST component %id;>
+                <!ELEMENT description (#PCDATA)>
+    <!ELEMENT author (copyright, names_and_surname, id_number)>
+    <!ELEMENT author_and_contact (copyright, names_and_surname, id_number, contact)>
+        <!ELEMENT copyright (#PCDATA)>
+        <!ELEMENT names_and_surname (#PCDATA)>
+        <!ELEMENT id_number (#PCDATA)>
+        <!ELEMENT contact (title, mail, phone)>
+            <!ELEMENT mail (#PCDATA)>
+            <!ELEMENT phone (#PCDATA)>

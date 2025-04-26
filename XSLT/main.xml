@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="1st.xslt"?>
+<chess_blog>
+	<title type="main_title">CHESS</title>
+	<menu>
+		<title>HOME</title>
+		<topic>What is chess?</topic>
+		<topic>Fun websites!</topic>
+		<topic>Basics</topic>
+		<topic>History</topic>
+		<topic>Tourna- ments</topic>
+	</menu>
+	<main_information> 
+		<media id="rotating_horse">
+			<image type="rotate" name="Horse" source="img/horse_run.png">Horse Piece</image>
+		</media>
+		<welcome>Hello, Welcome to my blog! : )</welcome>
+		<text kind="Explanation">
+			Chess is a board game between two players. 
+			It's an abstract strategy game and involves no hidden information. 
+			It is played on a chessboard with 64 squares arranged in an eight-by-eight grid. 
+			At the start, each player controls sixteen pieces: one king, one queen, two rooks, two bishops, two knights, and eight pawns. 
+			The player who moves first controls white pieces, and the other controls black pieces. 
+			The object of the game is to checkmate the opponent's king, whereby the king is under immediate attack (in "check") and there is no way for it to escape. 
+			There are also several ways a game can end in a draw.
+			<ending>Today, chess is one of the world's most popular games, played by millions of people worldwide.</ending>
+		</text>
+		<link kind="other_link" source="https://en.wikipedia.org/wiki/Chess">Wikipedia</link>
+		<website_links>
+			<title>Fun Websites!</title>
+			<links_withmedia>
+				<link source="https://www.chess.com/"><image type="button_link" name="Chess.com" source="img/chesscom.png">Chess.com</image></link>
+				<link source="https://en.chessbase.com/"><image type="button_link" name="Chessbase.com" source="img/chessbase.png">Chessbase.com</image></link>
+				<link source="https://www.chessgames.com/"><image type="button_link" name="Chessgames.com" source="img/chessgames.png">Chessgames.com</image></link>
+				<link source="http://chess-results.com/"><image type="button_link" name="Chessresults.com" source="img/chessresults.jpg">Chessresults.com</image></link>
+				<link source="https://gameknot.com/"><image type="button_link" name="Gameknot.com" source="img/gameknot.png">Gameknot.com</image></link>
+			</links_withmedia>
+		</website_links>
+	</main_information>
+	<basics>
+		<title type="sub_title">BASICS</title>
+		<welcome>A start of an exiting journey! :D </welcome>
+		<media gallery="yes">
+			<image id="1" type="board" name="board" source="img/board.png">Default position</image>
+			<image id="2" type="board" name="knight" source="img/horse.png">The Knight</image>
+			<image id="1" type="board" name="pawn" source="img/pawn1.png">The Pawn</image>
+			<image id="2" type="board" name="pawn" source="img/pawn2.png">The Pawn first move</image>
+			<image id="1" type="board" name="bishop" source="img/bishop.png">The Bishop</image>
+			<image id="2" type="board" name="rook" source="img/rook.png">The Rook</image>
+			<image id="1" type="board" name="queen" source="img/queen.png">The Queen</image>
+			<image id="2" type="board" name="king" source="img/king.png">The King</image>
+		</media>
+		<rules>
+			<piece id="1">
+				<name>The Pawn</name>
+				<rule>If it is a pawn's first move, it can move forward one or two squares. If a pawn has already moved, then it can move forward just one square at a time. </rule>
+			</piece>
+			<piece id="2">
+				<name>The bishop</name>
+				<rule>The knight is the only piece in chess that can jump over another piece! It moves one square left or right horizontally and then two squares up or down vertically, OR it moves two squares left or right horizontally and then one square up or down vertically—in other words, the knight moves in an "L-shape." </rule>
+			</piece>
+			<piece id="3">
+				<name>The Knight</name>
+				<rule>The knight is the only piece in chess that can jump over another piece! It moves one square left or right horizontally and then two squares up or down vertically, OR it moves two squares left or right horizontally and then one square up or down vertically—in other words, the knight moves in an "L-shape." </rule>
+			</piece>
+			<piece id="4">
+				<name>The Rook</name>
+				<rule>It can move as many squares as it likes left or right horizontally, or as many squares as it likes up or down vertically (as long as it isn't blocked by other pieces). An easy way to remember how a rook can move is that it moves like a "+" sign.</rule>
+			</piece>
+			<piece id="5">
+				<name>The Queen</name>
+				<rule>It can move as many squares as it likes left or right horizontally, or as many squares as it likes up or down vertically (like a rook). The queen can also move as many squares as it likes diagonally (like a bishop). An easy way to remember how a queen can move is that it moves like a rook and a bishop combined!</rule>
+			</piece>
+			<piece id="6">
+				<name>The King</name>
+				<rule>The king is not a very powerful piece, as it can only move (or capture) one square in any direction. Please note that the king cannot be captured! When a king is attacked, it is called "check."</rule>
+			</piece>
+		</rules>
+	</basics>
+	<other_information>
+		<title type="sub_title">HISTORY</title>
+		<text kind="History">
+			The history of chess can be traced back nearly 1500 years to its earliest known predecessor, called chaturanga, in India; its prehistory is the subject of speculation. 
+			From India it spread to Persia. 
+			Following the Arab invasion and conquest of Persia, chess was taken up by the Muslim world and subsequently spread to Spain and the rest of Southern Europe. 
+			The game evolved roughly into its current form by about 1500 CE.
+			"Romantic chess" was the predominant playing style from the late 18th century to the 1880s. 
+			Chess games of this period emphasized quick, tactical maneuvers rather than long-term strategic planning. 
+			The Romantic era of play was followed by the Scientific, Hypermodern, and New Dynamism eras. 
+			In the second half of the 19th century, modern chess tournament play began, and the first official World Chess Championship was held in 1886. 
+			The 20th century saw great leaps forward in chess theory and the establishment of the World Chess Federation. 
+			In 1997, an IBM supercomputer beat Garry Kasparov, the then world chess champion, in the famous Deep Blue versus Garry Kasparov match, ushering the game into an era of computer domination. 
+			Since then, computer analysis - which originated in the 1970s with the first programmed chess games on the market - has contributed to much of the development in chess theory and has become an important part of preparation in professional human chess. 
+			Later developments in the 21st century made the use of computer analysis far surpassing the ability of any human player accessible to the public. 
+			Online gaming, which first appeared in the mid-1990s, also became popular in the 21st century.
+		</text>
+		<title type="sub_title">TOURNAMENTS</title>
+		<tournaments>
+			<component id="1">
+				<title>Candidates Tournament</title>
+				<description>This special tournament is only for those invited respectively qualified. The winner of this tournament has the right to take part in the World Championship against the current world champion (currently Magnus Carlsen). The tournament system has changed over the years, but the principle is clear - to identify the challenger in the fight for the world championship title. The Candidates Tournament could be entered from so-called interzonal tournaments. Today, the system is more complicated. The first two players of the FIDE Grand Prix Chess Series go to this tournament, the unsuccessful challenger for the world championship, the first two chess players from the World Cup, 2 players with the highest ELO rating and one chess player who is determined by "wild card".</description>
+			</component>
+			<component id="2">
+				<title>Wiijk aan Zee</title>
+				<description>The prestigious chess tournament is held in the city Wiijk aan Zee in the Netherlands every year since 1938. The best players from all around the world are present and it is nicknamed the Chess Wimbledon. It is not widely known, that it is not only a chess elite tournament, but a whole chess carnival that organizes tournaments even for lower level players and even fro amateur players. The most successful players in the history of the tournament are two chess players - Anand and Carlsen - both of them have won the tournament 5 times.</description>
+			</component>
+			<component id="3">
+				<title>Tournament in Dortmund</title>
+				<description>Since 1973, the well-established tournament Dortmund Sparkassen Chess Meeting is taking place in Dortmund. The tournament is usually played in two-round system where everyone plays against each other. Besides the Grand Tournament, there are also a number of lower level tournaments and open tournaments for the public. The ruler of this tournament is a Russian chess player Vladimir Kramnik with 10 victories.</description>
+			</component>
+			<component id="4">
+				<title>Chess tournament in Linares</title>
+				<description>In Linares, Spain, a famous chess tournament was held every year to attract the best chess players. The tournament was founded in 1978, but it fast became one of the most prestigious chess tournaments in the world. It was every year only until 2010, since when the tournament is cancelled for various reasons. The legendary Garry Kasparov was eight times winner of this tournament.</description>
+			</component>
+		</tournaments>
+	</other_information>
+	<author_and_contact>
+		<copyright>Copyright 2022</copyright>
+		<names_and_surname>Olga Paszkiewicz</names_and_surname>
+		<id_number>187583</id_number>
+	</author_and_contact>
+</chess_blog>
